@@ -30,6 +30,7 @@ public class DynamicDataSourceConfig {
 
     @PostConstruct
     public void init() {
+        //TODO: NPE when getDataSource(). For some reason configuration file doesn't visible.
         for (DataSourcesProperties.DataSourceConfig config : dataSourcesProperties.getDataSources()) {
             DataSource dataSource = DataSourceBuilder.create()
                     .driverClassName("org.postgresql.Driver")
